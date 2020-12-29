@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ssh.entities">
+
+    <!--dynamic-update="true" 动态更新 只有当跟数据库中数据不一致时发送update请求-->
+    <class name="Department" table="SSH_DEPARTMENT" schema="myoracle2" dynamic-update="true">
+        <!--unsaved-value="any" :是否认定为游离对象-->
+        <id name="id" column="id" >
+            <!--指定主键的生成方式，native：数据库本地生成-->
+            <generator class="native"></generator>
+        </id>
+
+        <property name="name" column="NAME" type="java.lang.String"></property>
+    </class>
+</hibernate-mapping>
